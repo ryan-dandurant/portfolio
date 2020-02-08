@@ -41,14 +41,15 @@ def construct(length, min_angle, max_angle):
     left(min_angle)
     backward(length)
 
-# turtle properties, for drawing
+# properties and constraints
 pensize(0.3)
-turn = randint(3, 90) + random()
 diameter = randint(20, 100)
-complexity = 2 # additional layers
 colors = ["grey", "coral", "teal"]
-color(choice(colors))
+complexity = 2 # additional layers
+
 # initial generator values
+color(choice(colors))
+turn = randint(3, 90) + random()
 angle1 = randint(1, 180)
 angle2 = randint(1, 180)
 branches = 0
