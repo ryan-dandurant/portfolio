@@ -56,7 +56,7 @@ branches = 0
 full_circle = 0
 
 # the loop runs any angle set which can be drawn as a perfect circle,
-# layering the image with a newly generated pattern by a factor of
+# layering the image with a newly generated patterns by a factor of
 # "complexity"
 
 while full_circle <= complexity:
