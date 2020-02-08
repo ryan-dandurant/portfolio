@@ -8,6 +8,8 @@ from turtle import *
 from random import *
 
 
+# define shapes and line segment constructs
+
 def octogon(size):
     left(90)
     forward(size / 2)
@@ -22,13 +24,12 @@ def construct_branch(length, min_angle, max_angle):
     forward(length)
     backward(length / 3)
     left(max_angle)
-    forward(length / 3)
-    octogon(length / 15)
-    backward(length / 3)
-    right(max_angle * 2)
-    forward(length / 3)
-    octogon(length / 15)
-    backward(length / 3)
+    for i in range(2):
+        forward(length / 3)
+        octogon(length / 15)
+        backward(length / 3)
+        if i == 0:
+            right(max_angle * 2)
     left(max_angle)
     backward(2 * (length / 3))
 
@@ -55,10 +56,11 @@ angle2 = randint(1, 180)
 branches = 0
 full_circle = 0
 
-# the loop runs any angle set which can be drawn as a perfect circle,
-# layering the image with a newly generated patterns by a factor of
-# "complexity"
-
+"""
+the loop runs any angle set which can be drawn as a perfect circle,
+layering the image with a newly generated patterns by a factor of
+"complexity"
+"""
 while full_circle <= complexity:
     if full_circle > complexity:
         break
@@ -77,6 +79,12 @@ while full_circle <= complexity:
     else:
         turn = randint(3, 90)
         
-# moves the turtle off-screen after drawing.
+# moves the turtle off-screen after drawing, for a clean view.
 penup()
 forward(5000)
+
+"""
+Initial research into pc antialiasing dismal. The version on my iphone has it,
+your results may vary. I would be interested in any thoughts on this matter.
+
+"""
